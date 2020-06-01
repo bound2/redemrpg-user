@@ -14,9 +14,12 @@
     "private": true,
     "dependencies": {
         "@types/node": "^13.13.4",
+        "mariadb": "^2.4.0",
         "redm-client-cfx": "^1.0.0",
         "redm-natives": "^1.0.1",
-        "redm-server-cfx": "^1.0.0"
+        "redm-server-cfx": "^1.0.0",
+        "reflect-metadata": "^0.1.13",
+        "tsyringe": "^4.3.0"
     },
     "devDependencies": {
         "@types/chai": "^4.2.11",
