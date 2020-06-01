@@ -10,3 +10,4 @@ yarn.lock
 .eslintrc.js
 .eslintignore
 .editorconfig
+.nyc_output/
