@@ -14,7 +14,7 @@ export class UserRepository {
             .query(
                 `
                 INSERT INTO user
-                    (created_at, steam_id, steam_name)
+                    (created, steam_id, steam_name)
                 VALUES
                     (?, ?, ?)
                 `,
