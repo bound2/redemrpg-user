@@ -92,7 +92,7 @@ describe('UserResource.factory operations',
                 created: new Date(),
                 version: 0
             };
-            const result = userResourceFactory.create(entity);
+            const result: UserResource = userResourceFactory.create(entity);
             expect(result.id).to.equal(entity.id);
             expect(result.steamId).to.equal(entity.steamId);
             expect(result.steamName).to.equal(entity.steamName);

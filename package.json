@@ -20,6 +20,7 @@
     "dependencies": {
         "@types/node": "^13.13.4",
         "mariadb": "^2.4.0",
+        "redemrpg-user-server-public-api": "^1.0.0",
         "redm-client-cfx": "^1.0.0",
         "redm-natives": "^1.0.1",
         "redm-server-cfx": "^1.0.0",
