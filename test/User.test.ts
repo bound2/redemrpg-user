@@ -1,5 +1,5 @@
 import 'mocha';
-import { expect, assert } from 'chai';
+import { expect } from 'chai';
 import { GenericContainer, StartedTestContainer } from 'testcontainers';
 
 import { Pool, PoolConfig, createPool } from 'mariadb';

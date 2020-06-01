@@ -4,7 +4,7 @@ import { UserEntity } from './entity/User.entity';
 
 @injectable()
 export class UserRepository {
-    public constructor(@inject('dbPool') private pool: Pool) { }
+    public constructor(@inject('dbPool') private pool: Pool) {}
 
     public async save(steamId: string, steamName: string): Promise<void> {
         const conn: PoolConnection = await this.pool.getConnection();

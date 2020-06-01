@@ -1,2 +1,2 @@
-# redpg-user
-Core user module
+# redemrpg-user
+Core user module for RedM rpg framework
