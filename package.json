@@ -13,7 +13,10 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "@types/node": "^13.13.4"
+        "@types/node": "^13.13.4",
+        "redm-client-cfx": "^1.0.0",
+        "redm-natives": "^1.0.1",
+        "redm-server-cfx": "^1.0.0"
     },
     "devDependencies": {
         "@types/chai": "^4.2.11",
