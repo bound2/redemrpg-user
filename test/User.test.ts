@@ -7,12 +7,15 @@ import { Pool, PoolConfig, createPool } from 'mariadb';
 import 'reflect-metadata';
 import { container } from 'tsyringe';
 
-import { UserEntity } from '../src/server/repository/entity/User.entity';
+import { UserEntity } from '../src/server/repository/User.entity';
 import { UserRepository } from '../src/server/repository/User.repository';
+import { UserResource } from 'redemrpg-user-server-public-api';
+import { UserResourceFactory } from '../src/server/factory/UserResource.factory';
 
 let mariadbContainer: StartedTestContainer;
 let dbPool: Pool;
 let userRepository: UserRepository;
+let userResourceFactory: UserResourceFactory;
 
 before(async function () {
     this.timeout(120 * 1000); // declare timeout of up to 2 mins
@@ -40,6 +43,7 @@ before(async function () {
     dbPool = createPool(config);
     container.register<Pool>('dbPool', { useValue: dbPool });
     userRepository = container.resolve(UserRepository);
+    userResourceFactory = container.resolve(UserResourceFactory);
 });
 
 after(async function () {
@@ -74,6 +78,24 @@ describe('User.repository operations',
                 .catch((err) => {
                     expect(err.message).contains(`Duplicate entry '${steamId}' for key 'steam_id_idx'`);
                 });
+        });
+    }
+);
+
+describe('UserResource.factory operations',
+    () => {
+        it('create from UserEntity', () => {
+            const entity: UserEntity = {
+                id: 1,
+                steamId: "steam:110000102b0de11",
+                steamName: "kalapala",
+                created: new Date(),
+                version: 0
+            };
+            const result = userResourceFactory.create(entity);
+            expect(result.id).to.equal(entity.id);
+            expect(result.steamId).to.equal(entity.steamId);
+            expect(result.steamName).to.equal(entity.steamName);
         });
     }
 );

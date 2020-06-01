@@ -1,6 +1,6 @@
 import { injectable, inject } from 'tsyringe';
 import { Pool, PoolConnection } from 'mariadb';
-import { UserEntity } from './entity/User.entity';
+import { UserEntity } from './User.entity';
 
 @injectable()
 export class UserRepository {
